@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+ <html>
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <title>Животные наше всё</title>
+ <style type="text/css">
+	             h1 {font-family:Blackadder ITC}
+	             p {font-family: Blackadder ITC}
+	             </style>
+ 
+ <style>
+ body {
+ 	color:#FFFFFF;
+  	font-family: Blackadder ITC;
+  	font-size: 18pt;
+  	background: url(meh_pyatnistyy_zver_odezhda_2560x1600.jpg);
+  }
+  
+  .content {
+  
+  	width:700px;
+  	margin:10px auto;
+  }
+  
+  h1 {
+  	padding:10px;
+  	margin-bottom: 0px;
+  }
+  
+  h6 {
+  	margin:0;
+  	text-align: center;
+  }
+  
+  h6 a {
+  	font-style:italic;
+  	font-weight: normal;
+  	font-size: 15px;
+  }
+  
+  .task {
+  	padding:10px;
+  }
+  
+  form {
+  
+  	padding:20px;
+  	width:100%;
+  	border:10px solid #fc3;
+  	
+  }
+  
+  select {
+  
+  	font-size: 20pt;
+  }
+  input[type="text"] {
+ 	padding:10px;
+ 	font-size: 18pt;
+ 	width:50px;
+ }
+  
+    
+  #check {
+  
+  	width:300px;
+  	font-size: 20px;
+  	height:60px;
+  	margin:10px auto;
+  }
+  
+  .success ul li {
+  
+  	list-style: none;
+  }
+  
+  .holod {
+  	text-decoration: underline;
+  	font-style: italic;
+  }
+  
+  .well {
+  	color: #fff;
+  	
+  	padding-left: 40 px;
+  }
+  
+  .bad {
+  	color: #f00;
+  	padding-left: 30px;
+  }
+  
+  </style>
+ 
+ <script src="jquery-3.2.1.js"></script>
+ <script>
+  	$(function() {
+  		$('#check').click(function() {
+  			var character = $('#character').val();
+  			var insult = $('#insult').val();
+  			var dish = $('#dish').val();
+  			var paw = $('#role').val();
+  			
+  			
+  			
+  			$('#result').load("/zadanie52?character="+character+"&insult="+insult+"&dish="+dish+"&paw="+paw);
+  		});
+  	});
+  </script>
+  </head>
+  <body>
+  
+  <div class="content">
+  <h1>Какое Вы животное?</h1>
+   Лев, антилопа, зайчик или возможно кошечка?
+ 
+ <div class="task">Ответьте на вопросы и узнаете всё</div>
+ <div class="task">Чем больше полей Вы заполните, тем точнее результат</div>
+  <form>
+  	Какая/ой Вы по характеру?
+  	<select id="character">
+  		<option value="-">не выбран</option>
+  		<option value="ch1">спокойная/ый и размеренная/ый</option>
+  		<option value="ch2">бестрая/ый и решительная/ый</option>
+  		<option value="ch3">легкая/ий на подъем, но рассудительная/ый</option>
+  	</select>
+  	
+  	<p>Что Вы сделаете, если Вас обидят? 
+  	
+  	<select id="insult">
+  		<option value="-">не выбран</option>
+  		<option value="in1">обижу в ответ</option>
+  		<option value="in2">расстроюсь и буду грустить</option>
+  		<option value="in3">затаю злобу</option>
+  		  	</select>
+  		<br>
+      	</p>
+  	<p>Какое блюдо Вы любите?<br>
+  	<select id="dish">
+  		<option value="-">не выбран</option>
+  		<option value="di1">брокколи и морковку</option>
+  		<option value="di2">сочный бифштекс</option>
+  		<option value="di3">рыбку</option>
+  		<option value="di4">only хлопья</option>
+  	</select>
+  	</p> 
+  
+  <p> Сколько лап хотите? (принимается только ответ "4"! Против системы не попрешь)  
+   <input type="text" id="paw" value="-">     </p>
+  </form>
+  
+  <button id="check">Завершить</button>
+  
+  <p>Результат:</p>
+  <div id="result"><i>после нажатия на кнопку, результат появится тут</i></div>
+  </div>
+  </body>
+  </html> 
